@@ -1,16 +1,51 @@
-<p style="color: green"><%= notice %></p>
-<div class="map" style="background-image: url('<%= @flat.image_url %>')"></div>
+<div class="background-image" style="background-image: url('<%= @flat.image_url %>'); height: 300px; background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <!-- Columna izquierda de 7/12 -->
+      <div class="col-7 mt-3">
+        <div class="card card-body">
+          <h1><%= @flat.name %></h1>
+          <p><%= @flat.address %></p>
+        </div>
+        <div class="card card-body mt-3">
+          <h3>A bit more about this flat...</h3>
+          <p><%= @flat.description %></p>
+          <img src="https://lavozdepolanco.org/wp-content/uploads/2017/08/polancosatelite.png" class="img-fluid" alt="Flat Image">
+        </div>
+      </div>
+      <!-- Columna derecha de 3/12 -->
+      <div class="col-3 mt-3">
+        <div class="card card-body mb-3">
+           <h5>Book this place!</h5>
+           <form action="">
+              <div class="input-group">
+                <span class="input-group-text" id="start-date-label">From:</span>
+                <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label" wfd-id="id1">
+              </div>
+              <div class="input-group mt-2">
+                <span class="input-group-text" id="end-date-label">To:</span>
+                <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label" wfd-id="id2">
+              </div>
+              <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%" wfd-id="id3">
+            </form>
+        </div>
 
-<div class="card card-body" style="width: 40rem;">
-  <h1><%= @flat.name %></h1>
-  <p><%= @flat.address %></p>
+        <div class="card card-body">
+          <h3>Details</h3>
+          <div class="extra_info d-flex">
+            <div class="guests">
+              <p><i class="fa-solid fa-user"></i> <%= @flat.number_of_guests %></p>
+            </div>
+            <div class="price ms-5">
+              <p><i class="fa-solid fa-dollar-sign"></i> <%= @flat.price_per_night %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
 
-<div class="card card-body mt-3" style="width: 40rem;">
-  <h3>A bit more about this flat...</h3>
-  <p><%= @flat.description %></p>
-</div>
 
-  <%= link_to "Back to flats", flats_path %>
+
 </div>
