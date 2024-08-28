@@ -1,0 +1,27 @@
+<div class="card p-4" style="width: 22rem;">
+  <%= image_tag flat.image_url, height: "200", width: "auto" %>
+  <div id="<%= dom_id flat %>" class="mt-2">
+    <h4><%= flat.name %></h4>
+    <p><%= flat.address %></p>
+    <div class="extra_info d-flex">
+      <div class="guests">
+        <p><i class="fa-solid fa-user"></i> <%= flat.number_of_guests %></p>
+      </div>
+      <div class="price ms-5">
+        <p><i class="fa-solid fa-dollar-sign"></i> <%= flat.price_per_night %></p>
+      </div>
+    </div>
+
+    <div class="links d-flex justify-content-between">
+      <div class="more">
+        <p><%= link_to "More info", flat %></p>
+      </div>
+      <div class="edit">
+        <p><%= link_to "Edit", edit_flat_path(flat), class: "link-warning" %></p>
+      </div>
+      <div class="remove">
+        <%= button_to "Remove", flat, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-link p-0 text-red" %>
+      </div>
+    </div>
+  </div>
+</div>

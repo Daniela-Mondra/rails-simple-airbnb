@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+<div class="map" style="background-image: url('<%= @flat.image_url %>')"></div>
+
+<div class="card card-body" style="width: 40rem;">
+  <h1><%= @flat.name %></h1>
+  <p><%= @flat.address %></p>
+</div>
+<div>
+
+<div class="card card-body mt-3" style="width: 40rem;">
+  <h3>A bit more about this flat...</h3>
+  <p><%= @flat.description %></p>
+</div>
+
+  <%= link_to "Back to flats", flats_path %>
+</div>
